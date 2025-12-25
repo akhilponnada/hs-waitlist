@@ -37,7 +37,7 @@ export default function Home() {
                     >
                         <div className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full flex items-center">
                             <span className="text-[10px] md:text-[11px] font-bold tracking-[0.4em] uppercase text-zinc-400">
-                                Distributed Context Layer
+                                SAVE EVERYTHING. FIND ANYTHING.
                             </span>
                         </div>
                     </motion.div>
@@ -53,9 +53,8 @@ export default function Home() {
                             <span className="text-white">Just Hypersave.</span>
                         </h1>
 
-                        <p className="mt-8 md:mt-12 max-w-2xl mx-auto text-base md:text-xl text-zinc-500 font-light leading-relaxed">
-                            A universal memory layer that captures and recalls
-                            everything in your digital life, automatically.
+                        <p className="mt-8 md:mt-12 max-w-2xl mx-auto text-lg md:text-xl text-zinc-500 font-light leading-relaxed tracking-tight">
+                            Hypersave is your primary interface for memory. A universal layer that captures and recalls everything in your life—searchable in seconds.
                         </p>
                     </motion.div>
 

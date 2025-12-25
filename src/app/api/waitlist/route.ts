@@ -23,7 +23,7 @@ export async function POST(req: Request) {
         const userMailOptions = {
             from: `"Hypersave" <${process.env.SMTP_USER}>`,
             to: email,
-            subject: "You're in. Welcome to the Context Layer.",
+            subject: "You're in. Welcome to the Memory Layer.",
             text: `Welcome to Hypersave. We've added ${email} to our waitlist. You'll be notified as soon as early access is available.`,
             html: `
                 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #ffffff; color: #000000;">
@@ -36,7 +36,7 @@ export async function POST(req: Request) {
                     </h1>
                     
                     <p style="font-size: 16px; line-height: 1.6; color: #333; margin-bottom: 32px; text-align: center;">
-                        You're officially on the list. We're building the universal memory layer for humans and AI, and we're excited to have you with us from the start.
+                        You're officially on the list. We're building Hypersave to be your primary interface for memory—a universal layer that captures and recalls everything in your life. We're excited to have you with us from the start.
                     </p>
                     
                     <div style="background-color: #f5f5f5; border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 40px;">
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
                     <hr style="border: none; border-top: 1px solid #eee; margin-bottom: 24px;" />
                     
                     <p style="color: #999; font-size: 11px; text-align: center; text-transform: uppercase; letter-spacing: 0.1em;">
-                        © 2024 Nuro AI Labs Limited • Distributed Context Layer
+                        © 2024 Nuro AI Labs Limited • SAVE EVERYTHING. FIND ANYTHING.
                     </p>
                 </div>
             `,
