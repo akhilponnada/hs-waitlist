@@ -1,65 +1,120 @@
-import Image from "next/image";
+"use client"
+
+import { motion } from "framer-motion"
+import { WaitlistForm } from "../components/WaitlistForm"
+import { ShaderAnimation } from "../components/ShaderBackground"
+import { Twitter, Instagram } from "lucide-react"
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    return (
+        <main className="fixed inset-0 bg-black text-white selection:bg-white/10 overflow-hidden flex flex-col items-center py-6 md:py-10 px-6">
+            {/* Shader Background */}
+            <div className="absolute inset-0 z-0">
+                <ShaderAnimation />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black" />
+            </div>
+
+            {/* Header - Centered White Logo */}
+            <header className="relative z-30 w-full mb-8 pt-4 md:pt-8">
+                <div className="flex justify-center">
+                    <img
+                        src="/logo.svg"
+                        alt="Hypersave Logo"
+                        className="h-8 md:h-10 w-auto invert brightness-[10]"
+                    />
+                </div>
+            </header>
+
+            {/* Main Content Area - Massive Impactful Typography */}
+            <div className="relative z-10 w-full max-w-7xl flex-1 flex flex-col items-center justify-center text-center">
+
+                <div className="space-y-6 md:space-y-10 px-4 w-full">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                        className="flex justify-center"
+                    >
+                        <div className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full flex items-center">
+                            <span className="text-[10px] md:text-[11px] font-bold tracking-[0.4em] uppercase text-zinc-400">
+                                Distributed Context Layer
+                            </span>
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+                        className="space-y-4"
+                    >
+                        <h1 className="text-6xl md:text-8xl lg:text-[11rem] font-serif italic tracking-tighter leading-[0.8] text-zinc-700">
+                            Don&apos;t Remember, <br />
+                            <span className="text-white">Just Hypersave.</span>
+                        </h1>
+
+                        <p className="mt-8 md:mt-12 max-w-2xl mx-auto text-base md:text-xl text-zinc-500 font-light leading-relaxed">
+                            A universal memory layer that captures and recalls
+                            everything in your digital life, automatically.
+                        </p>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="pt-4 md:pt-6 flex justify-center"
+                        id="waitlist"
+                    >
+                        <div className="w-full max-w-xl">
+                            <WaitlistForm />
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
+
+            {/* Footer - Updated with X and Instagram Links */}
+            <footer className="relative z-30 w-full max-w-7xl mt-auto">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-6 border-t border-white/[0.05]">
+
+                    <div className="flex items-center gap-8">
+                        <a href="mailto:hello@hypersave.io" className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-600 hover:text-white transition-all duration-300">
+                            Contact
+                        </a>
+                        <div className="flex items-center gap-6">
+                            <a
+                                href="https://x.com/hypersaveai"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-600 hover:text-white transition-all duration-300"
+                            >
+                                <Twitter className="w-3 h-3" />
+                                X
+                            </a>
+                            <a
+                                href="https://instagram.com/hypersaveai"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-600 hover:text-white transition-all duration-300"
+                            >
+                                <Instagram className="h-3 w-3" />
+                                Instagram
+                            </a>
+                        </div>
+                    </div>
+
+                    <div className="flex items-center gap-8 text-zinc-800">
+                        <span className="text-[9px] uppercase tracking-[0.3em] font-black hover:text-zinc-500 cursor-pointer transition-colors">
+                            Privacy
+                        </span>
+                        <span className="text-[9px] uppercase tracking-[0.3em] font-black hover:text-zinc-500 cursor-pointer transition-colors">
+                            Terms
+                        </span>
+                    </div>
+
+                </div>
+            </footer>
+
+        </main>
+    )
 }
