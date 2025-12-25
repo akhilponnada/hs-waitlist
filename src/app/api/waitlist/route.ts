@@ -38,7 +38,7 @@ export async function POST(req: Request) {
                 <body style="margin: 0; padding: 0; background-color: #ffffff; color: #000000;">
                     <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
                         <div style="margin-bottom: 40px; text-align: center;">
-                            <img src="https://hypersave.io/logo.svg" alt="Hypersave" style="height: 32px; width: auto;" />
+                            <img src="https://hypersave.io/logo.png" alt="Hypersave" style="height: 32px; width: auto;" />
                         </div>
                         
                         <h1 class="serif" style="font-size: 48px; font-weight: 400; letter-spacing: -0.04em; line-height: 0.9; margin-bottom: 24px; text-align: center; font-style: italic;">
