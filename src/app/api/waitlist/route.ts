@@ -26,39 +26,52 @@ export async function POST(req: Request) {
             subject: "You're in. Welcome to the Memory Layer.",
             text: `Welcome to Hypersave. We've added ${email} to our waitlist. You'll be notified as soon as early access is available.`,
             html: `
-                <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #ffffff; color: #000000;">
-                    <div style="margin-bottom: 40px; text-align: center;">
-                        <img src="https://hypersave.io/logo-black.png" alt="Hypersave" style="height: 32px; width: auto;" />
-                    </div>
-                    
-                    <h1 style="font-size: 32px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-bottom: 24px; text-align: center; font-style: italic;">
-                        Don't Remember, <br/> Just Hypersave.
-                    </h1>
-                    
-                    <p style="font-size: 16px; line-height: 1.6; color: #333; margin-bottom: 32px; text-align: center;">
-                        You're officially on the list. We're building Hypersave to be your primary interface for memory—a universal layer that captures and recalls everything in your life. We're excited to have you with us from the start.
-                    </p>
-                    
-                    <div style="background-color: #f5f5f5; border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 40px;">
-                        <p style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 8px 0;">Current Status</p>
-                        <p style="font-size: 18px; font-weight: 600; margin: 0; color: #000;">Early Access Pending</p>
-                    </div>
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+                    <style>
+                        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+                        .serif { font-family: 'Instrument Serif', serif; }
+                    </style>
+                </head>
+                <body style="margin: 0; padding: 0; background-color: #ffffff; color: #000000;">
+                    <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+                        <div style="margin-bottom: 40px; text-align: center;">
+                            <img src="https://hypersave.io/logo.svg" alt="Hypersave" style="height: 32px; width: auto;" />
+                        </div>
+                        
+                        <h1 class="serif" style="font-size: 48px; font-weight: 400; letter-spacing: -0.04em; line-height: 0.9; margin-bottom: 24px; text-align: center; font-style: italic;">
+                            Don't Remember, <br/> 
+                            <span style="color: #000000;">Just Hypersave.</span>
+                        </h1>
+                        
+                        <p style="font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 32px; text-align: center; font-weight: 400; max-width: 450px; margin-left: auto; margin-right: auto;">
+                            You're officially on the list. We're building Hypersave to be your primary interface for memory—a universal layer that captures and recalls everything in your life.
+                        </p>
+                        
+                        <div style="background-color: #f9f9f9; border-radius: 16px; padding: 24px; text-align: center; margin-bottom: 40px; border: 1px solid #eee;">
+                            <p style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #999; margin: 0 0 8px 0;">Waitlist Status</p>
+                            <p style="font-size: 18px; font-weight: 600; margin: 0; color: #000;">Early Access Pending</p>
+                        </div>
 
-                    <p style="font-size: 14px; line-height: 1.6; color: #666; text-align: center; margin-bottom: 40px;">
-                        We'll reach out to <strong>${email}</strong> as soon as your slot is ready. In the meantime, follow our progress:
-                    </p>
+                        <p style="font-size: 14px; line-height: 1.6; color: #888; text-align: center; margin-bottom: 40px;">
+                            We'll reach out to <strong>${email}</strong> as soon as your slot is ready.
+                        </p>
 
-                    <div style="text-align: center; margin-bottom: 40px;">
-                        <a href="https://x.com/hypersaveai" style="display: inline-block; margin: 0 15px; color: #000; text-decoration: none; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em;">Join X</a>
-                        <a href="https://instagram.com/hypersaveai" style="display: inline-block; margin: 0 15px; color: #000; text-decoration: none; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em;">Instagram</a>
+                        <div style="text-align: center; margin-bottom: 40px;">
+                            <a href="https://x.com/hypersaveai" style="display: inline-block; margin: 0 15px; color: #000; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;">X (Twitter)</a>
+                            <a href="https://instagram.com/hypersaveai" style="display: inline-block; margin: 0 15px; color: #000; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;">Instagram</a>
+                        </div>
+
+                        <hr style="border: none; border-top: 1px solid #eee; margin-bottom: 24px;" />
+                        
+                        <p style="color: #bbb; font-size: 10px; text-align: center; text-transform: uppercase; letter-spacing: 0.2em;">
+                            © 2024 Nuro AI Labs Limited • SAVE EVERYTHING. FIND ANYTHING.
+                        </p>
                     </div>
-
-                    <hr style="border: none; border-top: 1px solid #eee; margin-bottom: 24px;" />
-                    
-                    <p style="color: #999; font-size: 11px; text-align: center; text-transform: uppercase; letter-spacing: 0.1em;">
-                        © 2024 Nuro AI Labs Limited • SAVE EVERYTHING. FIND ANYTHING.
-                    </p>
-                </div>
+                </body>
+                </html>
             `,
         }
 
