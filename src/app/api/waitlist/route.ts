@@ -60,14 +60,14 @@ export async function POST(req: Request) {
                         </p>
 
                         <div style="text-align: center; margin-bottom: 40px;">
-                            <a href="https://x.com/hypersaveai" style="display: inline-block; margin: 0 15px; color: #000; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;">X (Twitter)</a>
+                            <a href="https://x.com/hypersave_io" style="display: inline-block; margin: 0 15px; color: #000; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;">X (Twitter)</a>
                             <a href="https://instagram.com/hypersaveai" style="display: inline-block; margin: 0 15px; color: #000; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;">Instagram</a>
                         </div>
 
                         <hr style="border: none; border-top: 1px solid #eee; margin-bottom: 24px;" />
                         
                         <p style="color: #bbb; font-size: 10px; text-align: center; text-transform: uppercase; letter-spacing: 0.2em;">
-                            © 2024 Nuro AI Labs Limited • SAVE EVERYTHING. FIND ANYTHING.
+                            © ${new Date().getFullYear()} Unite Group Inc. • SAVE EVERYTHING. FIND ANYTHING.
                         </p>
                     </div>
                 </body>

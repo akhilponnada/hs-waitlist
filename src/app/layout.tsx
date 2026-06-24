@@ -1,21 +1,52 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SiteNav } from "../components/site/SiteNav";
+import { SiteFooter } from "../components/site/SiteFooter";
 
-const inter = Inter({
+const geist = Geist({
     subsets: ["latin"],
-    variable: "--font-inter",
+    variable: "--font-geist",
 });
 
-const instrumentSerif = Instrument_Serif({
+const geistMono = Geist_Mono({
     subsets: ["latin"],
-    weight: "400",
-    variable: "--font-serif",
+    variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
-    title: "Hypersave | The AI Memory Layer",
-    description: "Hypersave is your second brain - an AI-powered universal memory layer that captures, organizes, and recalls everything in your digital life automatically.",
+    metadataBase: new URL("https://hypersave.io"),
+    title: {
+        default: "Hypersave — Memory for AI that isn't locked to one model",
+        template: "%s — Hypersave",
+    },
+    description:
+        "Hypersave is portable memory for AI. Bring your data; Hypersave turns it into memory your AI actually uses — across every model and app. You own it, not your model vendor.",
+    keywords: [
+        "AI memory",
+        "memory API",
+        "portable AI memory",
+        "model-agnostic memory",
+        "agent memory",
+        "RAG alternative",
+        "Hypersave",
+    ],
+    authors: [{ name: "Unite Group Inc." }],
+    openGraph: {
+        type: "website",
+        url: "https://hypersave.io",
+        siteName: "Hypersave",
+        title: "Hypersave — Memory for AI that isn't locked to one model",
+        description:
+            "Portable memory for AI. Bring your data; recall it across every model and app. You own it.",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Hypersave — Memory for AI that isn't locked to one model",
+        description:
+            "Portable memory for AI. Bring your data; recall it across every model and app. You own it.",
+        creator: "@hypersave_io",
+    },
     icons: {
         icon: "/favicon.svg",
         apple: "/favicon.svg",
@@ -28,9 +59,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="dark">
-            <body className={`${inter.variable} ${instrumentSerif.variable} antialiased bg-black text-white`}>
+        <html lang="en">
+            <body
+                className={`${geist.variable} ${geistMono.variable} antialiased bg-white text-zinc-950`}
+            >
+                <SiteNav />
                 {children}
+                <SiteFooter />
             </body>
         </html>
     );
