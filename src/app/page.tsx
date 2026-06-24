@@ -14,6 +14,9 @@ import {
     Lock,
     Layers,
     Check,
+    Sparkles,
+    BellRing,
+    Brain,
 } from "lucide-react"
 import { OpenAI, Claude, Gemini } from "@lobehub/icons"
 import { Integrations } from "../components/site/Integrations"
@@ -66,13 +69,22 @@ const USE_CASES = [
     },
 ]
 
-const BENEFITS = [
-    "Remembers across sessions, apps and devices",
-    "Learns each user's patterns automatically",
-    "Recalls with verified, cited answers — not guesses",
-    "Forgets the noise, keeps what matters",
-    "Portable — switch models without losing memory",
-    "You own and can export all of it, any time",
+const BRAIN_PILLARS = [
+    {
+        icon: Sparkles,
+        title: "It learns",
+        body: "Self-learning synapses infer how you communicate, decide and work — no tagging. Your profile sharpens with every interaction.",
+    },
+    {
+        icon: BellRing,
+        title: "It acts",
+        body: "Proactive recall: context-triggered reminders, a weekly watchlist of blockers, and alerts when new facts contradict the old.",
+    },
+    {
+        icon: Brain,
+        title: "It reasons",
+        body: "Temporal reasoning — now vs. before — a knowledge graph, and answers verified against your own facts before they're returned.",
+    },
 ]
 
 const SOURCES = [
@@ -101,7 +113,7 @@ export default function Home() {
                         >
                             <Pill>
                                 <LiveDot />
-                                Portable memory for AI · now live
+                                The cognitive memory layer · now live
                             </Pill>
                         </motion.div>
 
@@ -111,9 +123,8 @@ export default function Home() {
                             transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
                             className="mt-7 text-balance font-display text-[2.75rem] leading-[1.02] text-zinc-950 sm:text-6xl md:text-7xl"
                         >
-                            Memory for AI that isn&apos;t
-                            <br className="hidden sm:block" /> locked to{" "}
-                            <span className="text-accent">one model</span>.
+                            Memory that <span className="text-accent">thinks</span>
+                            <br className="hidden sm:block" /> — and works with any model.
                         </motion.h1>
 
                         <motion.p
@@ -122,9 +133,9 @@ export default function Home() {
                             transition={{ duration: 0.6, delay: 0.15 }}
                             className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-500"
                         >
-                            Bring your data. Hypersave turns it into memory your AI actually uses —
-                            and recalls with verified, cited answers — across every model and app.
-                            You own it, not your model vendor.
+                            Bring your data and Hypersave turns it into memory your AI actually uses —
+                            it learns your patterns, recalls with verified answers, and works across
+                            every model and app. You own it, not your model vendor.
                         </motion.p>
 
                         <motion.div
@@ -380,32 +391,35 @@ export default function Home() {
             <Section className="border-t border-zinc-200 bg-zinc-50">
                 <Container>
                     <SectionLabel index="05 / 05">Why it&apos;s better</SectionLabel>
-                    <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
-                        <SectionHeading
-                            title={
-                                <>
-                                    Not just storage.
-                                    <br />A <span className="text-accent">brain</span>.
-                                </>
-                            }
-                            lead="Under the simple API is a cognitive memory engine — memory sectors that decay like yours, patterns it learns on its own, and answers verified before they reach you. State-of-the-art recall: 86% on LoCoMo."
-                        />
-                        <div className="grid gap-3">
-                            {BENEFITS.map((b, i) => (
-                                <Reveal key={b} delay={(i % 3) * 0.05}>
-                                    <div className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white px-5 py-4">
-                                        <Check className="h-4 w-4 shrink-0 text-accent" strokeWidth={2.2} />
-                                        <span className="text-sm text-zinc-700">{b}</span>
-                                    </div>
-                                </Reveal>
-                            ))}
-                            <Reveal delay={0.1}>
-                                <Button href="/features" variant="ghost" arrow className="mt-1">
-                                    Explore the cognitive features
-                                </Button>
+                    <SectionHeading
+                        title={<>Not a database. A <span className="text-accent">brain</span>.</>}
+                        lead="Storage just hands back what you put in. Hypersave does more — it learns your patterns, acts before you ask, and reasons over time. That's what “memory that thinks” actually means."
+                    />
+                    <div className="mt-12 grid gap-4 md:grid-cols-3">
+                        {BRAIN_PILLARS.map((p, i) => (
+                            <Reveal key={p.title} delay={i * 0.06}>
+                                <div className="h-full rounded-2xl border border-zinc-200 bg-white p-7 shadow-sm">
+                                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent">
+                                        <p.icon className="h-5 w-5" strokeWidth={1.6} />
+                                    </span>
+                                    <h4 className="mt-5 text-lg font-semibold text-zinc-950">{p.title}</h4>
+                                    <p className="mt-2 text-sm leading-relaxed text-zinc-500">{p.body}</p>
+                                </div>
                             </Reveal>
-                        </div>
+                        ))}
                     </div>
+                    <Reveal delay={0.1}>
+                        <div className="mt-4 flex flex-col items-center justify-between gap-4 rounded-2xl border border-zinc-200 bg-white px-6 py-5 sm:flex-row">
+                            <p className="text-sm text-zinc-600">
+                                <span className="font-semibold text-zinc-950">86% on LoCoMo</span> —
+                                state-of-the-art long-context recall, with memory sectors that decay
+                                like yours.
+                            </p>
+                            <Button href="/features" variant="ghost" arrow>
+                                Explore the cognitive features
+                            </Button>
+                        </div>
+                    </Reveal>
                 </Container>
             </Section>
 
