@@ -102,7 +102,7 @@ export default function Home() {
             {/* ============================ HERO ============================ */}
             <section className="relative overflow-hidden px-6 pb-16 pt-36 md:pt-44">
                 <div className="dot-grid mask-radial pointer-events-none absolute inset-0 opacity-70" />
-                <div className="pointer-events-none absolute left-1/2 top-24 h-[28rem] w-[40rem] -translate-x-1/2 rounded-full bg-accent-soft blur-[120px]" />
+                <div className="pointer-events-none absolute left-1/2 top-24 h-[28rem] w-[40rem] -translate-x-1/2 rounded-full bg-accent-soft blur-[80px]" />
 
                 <Container className="relative">
                     <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -427,7 +427,7 @@ export default function Home() {
             <Section className="border-t border-zinc-200">
                 <Container>
                     <div className="relative overflow-hidden rounded-[2rem] border border-zinc-200 bg-gradient-to-b from-accent-soft to-white px-6 py-20 text-center md:py-24">
-                        <div className="pointer-events-none absolute left-1/2 top-0 h-56 w-[34rem] -translate-x-1/2 rounded-full bg-accent/10 blur-[120px]" />
+                        <div className="pointer-events-none absolute left-1/2 top-0 h-56 w-[34rem] -translate-x-1/2 rounded-full bg-accent/10 blur-[80px]" />
                         <div className="relative">
                             <Reveal>
                                 <h2 className="mx-auto max-w-2xl font-display text-4xl leading-[1.02] text-zinc-950 md:text-6xl">

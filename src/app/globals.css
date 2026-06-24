@@ -42,7 +42,6 @@
 }
 
 html {
-    scroll-behavior: smooth;
     background: var(--background);
     overflow-x: clip; /* Prevent horizontal overflow without scroll-locking on modern engines */
 }

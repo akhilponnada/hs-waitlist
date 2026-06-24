@@ -36,8 +36,8 @@ export function SiteNav() {
         <header className="fixed inset-x-0 top-0 z-50">
             <div
                 className={cn(
-                    "transition-all duration-300",
-                    scrolled ? "border-b border-zinc-200/80 bg-white/80 backdrop-blur-xl" : "border-b border-transparent",
+                    "transition-colors duration-300",
+                    scrolled ? "border-b border-zinc-200 bg-white" : "border-b border-transparent",
                 )}
             >
                 <nav className="mx-auto flex h-16 max-w-[1140px] items-center justify-between px-6 md:px-8">
@@ -110,7 +110,7 @@ export function SiteNav() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
                         transition={{ duration: 0.2 }}
-                        className="border-b border-zinc-200 bg-white/95 backdrop-blur-xl lg:hidden"
+                        className="border-b border-zinc-200 bg-white lg:hidden"
                     >
                         <div className="flex flex-col gap-1 px-6 py-5">
                             {NAV_LINKS.map((link) => (

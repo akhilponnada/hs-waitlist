@@ -138,7 +138,7 @@ export default function AboutPage() {
             <Section id="careers" className="border-t border-zinc-200">
                 <Container>
                     <div className="relative overflow-hidden rounded-[2rem] border border-zinc-200 bg-gradient-to-b from-accent-soft to-white px-6 py-20 text-center md:py-24">
-                        <div className="pointer-events-none absolute left-1/2 top-0 h-56 w-[34rem] -translate-x-1/2 rounded-full bg-accent/10 blur-[120px]" />
+                        <div className="pointer-events-none absolute left-1/2 top-0 h-56 w-[34rem] -translate-x-1/2 rounded-full bg-accent/10 blur-[80px]" />
                         <div className="relative">
                             <Reveal>
                                 <Pill>We&apos;re hiring · Est. 2024</Pill>
