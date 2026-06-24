@@ -33,6 +33,14 @@
     border-color: var(--color-hairline);
 }
 
+/* Sharp corners everywhere — flat, technical aesthetic.
+   One switch; remove this block to restore rounded corners. */
+*,
+*::before,
+*::after {
+    border-radius: 0 !important;
+}
+
 html {
     scroll-behavior: smooth;
     background: var(--background);
